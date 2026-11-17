@@ -1,0 +1,12 @@
+{
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/:lang(de|en|fr|it)/kontakt", "destination": "/#kontakt", "permanent": true },
+    { "source": "/:lang(de|en|fr|it)/vorgehen", "destination": "/#vorgehen", "permanent": true },
+    { "source": "/:lang(de|en|fr|it)/:path*", "destination": "/", "permanent": true },
+    { "source": "/:lang(de|en|fr|it)", "destination": "/", "permanent": true }
+  ],
+  "headers": [
+    { "source": "/img/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] }
+  ]
+}
