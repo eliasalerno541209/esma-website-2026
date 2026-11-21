@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="canonical" href="https://www.esmaindustry.com/"><link rel="icon" href="/img/favicon.png"><link rel="apple-touch-icon" href="/img/favicon.png"><meta property="og:type" content="website"><meta property="og:title" content="ESMA Industry – Wohnimmobilien entwickeln in der Schweiz"><meta property="og:description" content="Wir prüfen Grundstücke, entwickeln Wohnprojekte und führen sie mit Architekten, Banken und Investoren bis zum Verkauf."><meta property="og:image" content="https://www.esmaindustry.com/img/og.jpg"><meta name="theme-color" content="#0B0B0B">
 <title>ESMA Industry – Wohnimmobilien entwickeln in der Schweiz</title>
 <meta name="description" content="ESMA Industry prüft Grundstücke, entwickelt Wohnprojekte und führt sie mit Architekten, Banken und Investoren bis zum Verkauf. Sitz in Ins BE, aktiv im Aargau und im Wallis.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
@@ -324,7 +323,7 @@ footer a:hover{color:var(--g)}
 <section id="start">
  <div class="hero-art" id="heroArt"></div>
  <div class="hero-shade"></div>
- 
+ <span class="vis-tag">Symbolbild (KI)</span>
  <div class="wrap hero-in">
   <div class="eyebrow">Immobilienentwicklung Schweiz</div>
   <h1>Aus Grundstücken werden Lebensräume.</h1>
@@ -403,9 +402,9 @@ footer a:hover{color:var(--g)}
  <div class="wrap">
   <div class="reveal"><div class="eyebrow">Projekte</div><h2>Woran wir arbeiten</h2><p class="lead">Unsere ersten Projekte befinden sich in der Prüfung. Aus Respekt vor Eigentümern und Behörden zeigen wir sie ohne Adresse.</p></div>
   <div class="projs">
-   <button class="proj reveal" data-p="0"><div class="pic" data-art="p0"></div><div class="body"><div class="reg">Kanton Aargau</div><h3>Stadthaus am Bahnhof</h3><div class="kpi"><span>5 Wohnungen</span><span>2 Geschosse + Attika</span><span>autoarm</span></div><span class="status">Volumenstudie · Vorabklärung Stadt</span><span class="open3d">3D-Modell ansehen →</span></div></button>
-   <button class="proj reveal" data-p="1"><div class="pic" data-art="p1"></div><div class="body"><div class="reg">Kanton Aargau</div><h3>Terrassenwohnungen am Hang</h3><div class="kpi"><span>6–7 Wohnungen</span><span>Terrassen mit Aussicht</span></div><span class="status">Voranfrage beantwortet</span><span class="open3d">3D-Modell ansehen →</span></div></button>
-   <button class="proj reveal" data-p="2"><div class="pic" data-art="p2"></div><div class="body"><div class="reg">Oberwallis</div><h3>Wohnareal im Tal</h3><div class="kpi"><span>ca. 5'500 m²</span><span>Wachstumsregion</span></div><span class="status">Machbarkeit in Abklärung</span><span class="open3d">3D-Modell ansehen →</span></div></button>
+   <button class="proj reveal" data-p="0"><div class="pic" data-art="p0"><span class="vis-tag">Visualisierung, Konzept</span></div><div class="body"><div class="reg">Kanton Aargau</div><h3>Stadthaus am Bahnhof</h3><div class="kpi"><span>5 Wohnungen</span><span>2 Geschosse + Attika</span><span>autoarm</span></div><span class="status">Volumenstudie · Vorabklärung Stadt</span><span class="open3d">3D-Modell ansehen →</span></div></button>
+   <button class="proj reveal" data-p="1"><div class="pic" data-art="p1"><span class="vis-tag">Visualisierung, Konzept</span></div><div class="body"><div class="reg">Kanton Aargau</div><h3>Terrassenwohnungen am Hang</h3><div class="kpi"><span>6–7 Wohnungen</span><span>Terrassen mit Aussicht</span></div><span class="status">Voranfrage beantwortet</span><span class="open3d">3D-Modell ansehen →</span></div></button>
+   <button class="proj reveal" data-p="2"><div class="pic" data-art="p2"><span class="vis-tag">Visualisierung, Konzept</span></div><div class="body"><div class="reg">Oberwallis</div><h3>Wohnareal im Tal</h3><div class="kpi"><span>ca. 5'500 m²</span><span>Wachstumsregion</span></div><span class="status">Machbarkeit in Abklärung</span><span class="open3d">3D-Modell ansehen →</span></div></button>
   </div>
   <p class="note-small reveal">Abgeschlossene Referenzen erscheinen hier, sobald sie belegbar sind.</p>
  </div>
@@ -536,7 +535,7 @@ const smallArt={
 };
 $('#heroArt').innerHTML='<img src="img/hero.jpg" alt="Modernes Mehrfamilienhaus vor Schweizer Bergen in der Abenddämmerung">';
 const PIC={land:['weg-grundstueck','Unbebaute Wiesenparzelle am Dorfrand'],invest:['weg-investoren','Besprechungstisch mit Plänen und Hausmodell'],town:['weg-gemeinden','Schweizer Ortszentrum mit neuem Wohnhaus'],home:['weg-zuhause','Helle Neubauwohnung mit Bergblick'],p0:['projekt-stadthaus','Visualisierung Stadthaus'],p1:['projekt-terrassen','Visualisierung Terrassenwohnungen am Hang'],p2:['projekt-wohnareal','Visualisierung Wohnareal mit Innenhof']};
-$$('[data-art]').forEach(el=>{const [f,a]=PIC[el.dataset.art];el.insertAdjacentHTML('afterbegin',`<img src="img/${f}.jpg" alt="${a}" loading="lazy">`)});
+$$('[data-art]').forEach(el=>{const [f,a]=PIC[el.dataset.art];el.insertAdjacentHTML('afterbegin',`<img src="img/${f}.jpg" alt="${a}" loading="lazy">`);if(!el.querySelector('.vis-tag'))el.insertAdjacentHTML('beforeend','<span class="vis-tag">Symbolbild (KI)</span>')});
 
 /* ---------- Header / nav ---------- */
 const hdr=$('#hdr');const onScroll=()=>hdr.classList.toggle('solid',scrollY>innerHeight*0.7);addEventListener('scroll',onScroll,{passive:true});onScroll();
@@ -559,7 +558,7 @@ $$('.way').forEach(w=>{const tog=()=>{const was=w.classList.contains('open');$$(
 /* ---------- Process ---------- */
 const pv=$('#procVis');
 const stepArt=[['schritt1-pruefen','Katasterplan und Laptop auf dem Arbeitstisch'],['schritt2-entwickeln','Architekturmodell eines Terrassenhauses'],['schritt3-finanzierung','Besprechung eines Projektberichts'],['schritt4-bauen','Rohbau mit Kran im Morgenlicht'],['schritt5-uebergabe','Schlüsselübergabe vor dem neuen Haus']].map(([f,a])=>`<img src="img/${f}.jpg" alt="${a}" loading="lazy">`);
-stepArt.forEach((a,i)=>{pv.insertAdjacentHTML('beforeend',a);pv.lastElementChild.classList.toggle('on',i===0)});
+stepArt.forEach((a,i)=>{pv.insertAdjacentHTML('beforeend',a);pv.lastElementChild.classList.toggle('on',i===0)});pv.insertAdjacentHTML('beforeend','<span class="vis-tag">Symbolbild (KI)</span>');
 const svgs=pv.querySelectorAll('img');
 const sio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const i=+e.target.dataset.i;$$('.step').forEach(s=>s.classList.toggle('on',+s.dataset.i===i));svgs.forEach((s,j)=>s.classList.toggle('on',j===i));$('#procN').textContent=`0${i+1} / 05`;$('#procB').style.width=(i+1)*20+'%'}}),{rootMargin:'-45% 0px -45% 0px'});
 $$('.step').forEach(s=>sio.observe(s));$('.step').classList.add('on');
@@ -635,7 +634,7 @@ $('#form').addEventListener('submit',async e=>{e.preventDefault();const out=$('#
  catch(err){out.className='fmsg err';out.textContent='Die Anfrage konnte nicht gesendet werden. Bitte schreiben Sie direkt an contact@esmaindustry.com oder rufen Sie 076 393 13 57 an.'}});
 
 /* ---------- Legal ---------- */
-const legal={imp:`<h2 style="font-size:36px">Impressum</h2><h3>Verantwortlich</h3><p>ESMA Industry<br>Elia Salerno und Mateo Ammon<br>Rosenweg 4, 3232 Ins<br>contact@esmaindustry.com · 076 393 13 57</p><h3>Rechtsform</h3><p>ESMA Industry ist noch nicht im Handelsregister eingetragen. Die Gründung einer Gesellschaft ist mit den ersten Projektrealisierungen vorgesehen.</p><h3>Bilder</h3><p>Die Bilder auf dieser Website sind mit künstlicher Intelligenz erstellte Symbolbilder und Visualisierungen. Projektbilder zeigen Konzepte im Planungsstadium, keine gebauten Objekte.</p>`,
+const legal={imp:`<h2 style="font-size:36px">Impressum</h2><h3>Verantwortlich</h3><p>ESMA Industry<br>Elia Salerno und Mateo Ammon<br>Rosenweg 4, 3232 Ins<br>contact@esmaindustry.com · 076 393 13 57</p><h3>Rechtsform</h3><p>ESMA Industry ist noch nicht im Handelsregister eingetragen. Die Gründung einer Gesellschaft ist mit den ersten Projektrealisierungen vorgesehen.</p><h3>Bilder</h3><p>Alle Projekt- und Landschaftsbilder sind Illustrationen bzw. Visualisierungen im Konzeptstadium und zeigen keine gebauten Objekte.</p>`,
  ds:`<h2 style="font-size:36px">Datenschutz</h2><h3>Verantwortliche Stelle</h3><p>ESMA Industry, Elia Salerno und Mateo Ammon, Rosenweg 4, 3232 Ins, contact@esmaindustry.com.</p><h3>Kontaktformular</h3><p>Angaben aus dem Formular (Name, E-Mail, Telefon, Ort, Nachricht) verwenden wir ausschliesslich zur Beantwortung Ihrer Anfrage. Die Übermittlung erfolgt über den Dienst Web3Forms, der die Nachricht per E-Mail an uns weiterleitet. Wir geben Ihre Daten nicht an Dritte weiter und löschen sie, wenn sie nicht mehr benötigt werden.</p><h3>Hosting</h3><p>Die Website wird bei Vercel gehostet. Beim Aufruf werden technisch notwendige Daten (z. B. IP-Adresse, Zeitpunkt) verarbeitet.</p><h3>Ihre Rechte</h3><p>Sie können jederzeit Auskunft, Berichtigung oder Löschung Ihrer Daten verlangen: contact@esmaindustry.com.</p><p style="margin-top:14px;font-size:13px;color:#888">Stand: November 2026, nach dem Schweizer Datenschutzgesetz (DSG).</p>`};
 $$('[data-legal]').forEach(a=>a.onclick=e=>{e.preventDefault();$('#lContent').innerHTML=legal[a.dataset.legal];$('#lModal').classList.add('open')});
 $$('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m||e.target.closest('[data-close]')){m.classList.remove('open');if(m.id==='pModal')viewer&&viewer.stop()}}));
@@ -648,7 +647,7 @@ const projInfo=[
  {reg:'Kanton Aargau',t:'Terrassenwohnungen am Hang',kv:[['Wohnungen','6–7'],['Typ','Terrassenhaus'],['Status','Voranfrage bei der Stadt beantwortet']],d:'Versetzte Wohnungen folgen dem Hang. Jede Wohnung erhält eine grosse, begrünte Terrasse mit Aussicht.'},
  {reg:'Oberwallis',t:'Wohnareal im Tal',kv:[['Fläche','ca. 5\'500 m²'],['Region','Wachstumsregion Oberwallis'],['Status','Machbarkeit in Abklärung']],d:'Mehrere Wohnhäuser mit grünen Höfen, gut erschlossen und nah an Schulen und Einkauf.'}];
 $$('.proj').forEach(b=>b.onclick=()=>{const i=+b.dataset.p,p=projInfo[i];const side=`<div class="mside"><div class="reg">${p.reg}</div><h3>${p.t}</h3><p style="font-size:15px">${p.d}</p><dl>${p.kv.map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl><div class="unitcard" id="unitCard"></div><p style="font-size:12px;color:#999;margin-top:18px">Visualisierung, Konzept. Ohne Adresse und Umgebung aus Rücksicht auf Eigentümer und Behörden.</p></div>`;
- $('#pContent').innerHTML=`<div class="m3d"><div class="viewer" id="viewer"><div class="vctrl" id="vctrl"></div><canvas id="cv"></canvas></div>${side}</div>`;
+ $('#pContent').innerHTML=`<div class="m3d"><div class="viewer" id="viewer"><div class="vctrl" id="vctrl"></div><canvas id="cv"></canvas><span class="hint">Visualisierung, Konzept</span></div>${side}</div>`;
  $('#pModal').classList.add('open');viewer&&viewer.stop();viewer=make3D(i)});
 
 const M3D={
